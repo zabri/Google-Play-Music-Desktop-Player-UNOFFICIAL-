@@ -10,6 +10,13 @@ const styles = {
     width: '50%',
     float: 'left',
     padding: '4px 6px',
+    position: 'relative',
+  },
+  clearButton: {
+    cursor: 'pointer',
+    position: 'absolute',
+    right: 10,
+    top: 45,
   },
 };
 
@@ -117,6 +124,9 @@ class HotkeyInput extends Component {
           onKeyUp={this._handleKeyUp}
           fullWidth
         />
+        <div style={styles.clearButton} onClick={this._reset}>
+          {this.props.hotkeys[this.props.hotkeyAction] ? '⌫' : ''}
+        </div>
       </div>
     );
   }
